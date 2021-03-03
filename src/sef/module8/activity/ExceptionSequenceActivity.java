@@ -1,4 +1,4 @@
-package sef.module8.activity;
+package activity;
 //Needs to be completed
 //1 - Find out the error in this program and share your finding with the instructor
 public class ExceptionSequenceActivity {
@@ -15,10 +15,6 @@ void divide(int num1,int num2)
 	{
 		System.out.println("Exception!!!");
 	}
-	catch(ArithmeticException a)
-	{
-		System.out.println("Division by zero is not allowed");
-	}
-	
+
 }
 }
