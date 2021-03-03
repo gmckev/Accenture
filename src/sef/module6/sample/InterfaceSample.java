@@ -1,4 +1,4 @@
-package sef.module6.sample;
+package sample;
 
 public class InterfaceSample {
 
@@ -10,7 +10,6 @@ public class InterfaceSample {
 		
 		l.move();
 		b.move();
-		
 
 	}
 

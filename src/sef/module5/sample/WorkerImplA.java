@@ -1,4 +1,4 @@
-package sef.module5.sample;
+package sample;
 
 public class WorkerImplA implements Worker{
 	

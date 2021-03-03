@@ -1,4 +1,4 @@
-package sef.module5.sample;
+package sample;
 
 /**
 The inner class is referenced no earlier and therefore loaded no earlier 

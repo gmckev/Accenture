@@ -1,4 +1,4 @@
-package sef.module6.sample;
+package sample;
 
 //Lion class implements Moveable interface
 public class Lion implements Moveable {

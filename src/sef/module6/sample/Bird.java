@@ -1,4 +1,4 @@
-package sef.module6.sample;
+package sample;
 
 // Bird class implements Moveable interface
 public class Bird implements Moveable {
