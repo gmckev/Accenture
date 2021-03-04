@@ -1,4 +1,4 @@
-package sef.module9.activity;
+package activity;
 
 import static org.junit.Assert.*;
 

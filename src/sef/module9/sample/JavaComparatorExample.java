@@ -1,4 +1,4 @@
-package sef.module9.sample;
+package sample;
 // Complete Code
 import java.util.Arrays;
 

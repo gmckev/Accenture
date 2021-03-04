@@ -1,4 +1,4 @@
-package sef.module9.activity;
+package activity;
 
 import static org.junit.Assert.*;
 
@@ -34,17 +34,17 @@ public class ListActivityTest2 {
 	@Test
 	public void test() {
 		
-		System.out.println(temp);
+//		System.out.println(temp);
 		fail("Not yet implemented");
 	}
 	@Test
 	public void test1() {
-		System.out.println(temp);
+//		System.out.println(temp);
 		fail("Not yet implemented");
 	}
 	@Test
 	public void test2() {
-		System.out.println(temp);
+//		System.out.println(temp);
 		fail("Not yet implemented");
 	}
 	

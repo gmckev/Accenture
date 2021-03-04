@@ -1,23 +1,28 @@
-package sef.module17.activity;
+package activity;
 //Needs to be completed
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class EmployeeJDBC {
 
-	public Connection createConnection()
+	public static void main(String[] args) {
+		Employee employee = findEmployeeById(1);
+		System.out.println(employee.getId());
+		System.out.println(employee.getFirstName());
+		System.out.println(employee.getLastName());
+		System.out.println(employee.getSalary());
+		Employee employee1 = new Employee(2,"John","Doe",200);
+		insertEmployee(employee1);
+	}
+	public static Connection createConnection()
 	{
 		Connection con=null;
-		String url = "jdbc:mysql://localhost/activity";
+		String url = "jdbc:mysql://localhost/shop?useUnicode=true&serverTimezone=UTC";
 		String user = "root";
-		String pass = "adbd1234";
+		String pass = "12345678";
 
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(url, user, pass);
 			System.out.println("Connection successfully established!");
 		} catch (ClassNotFoundException e) {
@@ -31,22 +36,31 @@ public class EmployeeJDBC {
 		return con;
 	}
 	
-	public Employee findEmployeeById(String id)
+	public static Employee findEmployeeById(int id)
 	{
 		Connection con = createConnection();
 		Employee emp=null;
 		try {
 		// 1 - Create a PreparedStatement with a query
-		
-
+			PreparedStatement statement = con.prepareStatement("SELECT * FROM employee where id=?");
+			statement.setInt(1,id);
 		// 2 - Search for the given id
-		
+			ResultSet rs = statement.executeQuery();
 
 		// 3 - Execute this query
 		
 		
 		// 4 - If resultset is not null, then initialize emp object with data 
-		
+
+			if(rs.next()) {
+				emp = new Employee(
+						rs.getInt(1),
+						rs.getString(2),
+						rs.getString(3),
+						rs.getInt(4)
+				);
+			}
+
 		con.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -107,23 +121,23 @@ public class EmployeeJDBC {
 		return list;
 	}
 
-	public void insertEmployee(Employee emp)
-	{
+	public static void insertEmployee(Employee emp) {
 		Connection con = createConnection();
-		
-		//1 - Create a PreparedStatement with a query "insert into employee values(?,?,?,?)" 
-		
+		try {
 		con.setAutoCommit(false);
-
-		//	Substitute the ? now.
-		
-		//2 - Execute this query using executeUpdate()
-			
-		System.out.println(rows + " row(s) added!");
+		PreparedStatement statement = con.prepareStatement("INSERT INTO employee (firstname, lastname, salary) VALUES (?,?,?)");
+		statement.setString(1,emp.getFirstName());
+		statement.setString(2,emp.getLastName());
+		statement.setInt(3,emp.getSalary());
+		int result = statement.executeUpdate();
+		if(result==1) {
+			System.out.println("Successfully inserted values");
+		} else {
+			System.out.println("Error, something went wrong");
+		}
 		con.commit();
 		con.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

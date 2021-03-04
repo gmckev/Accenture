@@ -1,4 +1,4 @@
-package sef.module9.sample;
+package sample;
 //Needs to be completed
 import java.util.Iterator;
 import java.util.List;
@@ -35,7 +35,9 @@ public class ListSample {
 
 	    
 	    //1 - Add 3 more elements to the list - A, B and C
-	    
+	    list.add("A");
+	    list.add("B");
+	    list.add("C");
 	    
 	    
 		//call a method which prints this list
@@ -49,5 +51,9 @@ public class ListSample {
 		//individual elements of a Collection
 		
 		//2 - Use Iterator to iterate over this list.
-			}
+		Iterator<String> iterator = l.iterator();
+		while(iterator.hasNext()) {
+			System.out.println(iterator.next());
+		}
+	}
 }

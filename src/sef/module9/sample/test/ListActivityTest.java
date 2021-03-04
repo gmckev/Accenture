@@ -1,7 +1,6 @@
-package sef.module9.sample.test;
+package sample.test;
 
 import static org.junit.Assert.*;
-import sef.module9.sample.ListSample;
 
 import org.junit.After;
 import org.junit.Before;
