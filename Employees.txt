@@ -1,0 +1,4 @@
+My name is Gleb Mickevich. I am 27 years old. I work as QA Lead in a company Accenture.
+My name is John Doe. I am 18 years old. I work as QA Engineer in a company Accenture.
+My name is Alex Smith. I am 30 years old. I work as QA Automation Engineer in a company Accenture.
+My name is Bob Turn. I am 50 years old. I work as Junior QA in a company Accenture.
